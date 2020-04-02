@@ -4,12 +4,33 @@
 			<pages>
 				<Page id="page" title="{i18n>title}">
 					<content>
-						<SearchField search="onSearch" />
-						<List id="list" items="{fonte>/Products}">
-							<items>
-								<StandardListItem title="{fonte>ID}" description="{fonte>Name}" info="{fonte>Price}" />
-							</items>
-						</List>
+						<Panel headerText="Formulário" expandable="true">
+							<content>
+								<sap.ui.layout.form:SimpleForm editable="true" layout="ResponsiveGridLayout" xmlns:sap.ui.layout.form="sap.ui.layout.form"
+									xmlns:sap.ui.core="sap.ui.core" id="form">
+									<sap.ui.layout.form:content>
+										<Label text="ID"/>
+										<Input value="{fonte>ID}" id="produto_id"/>
+										<Label text="Nome"/>
+										<Input value="{fonte>Name}" id="produto_nome"/>
+										<Label text="Descrição"/>
+										<Input value="{fonte>Description}" id="produto_descricao"/>
+										<Label/>
+										<Button icon="sap-icon://save" text="Salvar" press="onSave"/>
+										<Button icon="sap-icon://edit" text="Atualizar" press="onUpdate"/>
+										<Button icon="sap-icon://refresh" text="Limpar" press="onClean"/>
+									</sap.ui.layout.form:content>
+								</sap.ui.layout.form:SimpleForm>
+							</content>
+						</Panel>
+						<Panel headerText="Produtos" expandable="true">
+							<SearchField search="onSearch"/>
+							<List id="list" items="{fonte>/Products}">
+								<items>
+									<StandardListItem title="{fonte>ID}" description="{fonte>Name}" info="{fonte>Price}" press="onItemPress"/>
+								</items>
+							</List>
+						</Panel>
 					</content>
 				</Page>
 			</pages>
