@@ -15,7 +15,8 @@
 										<Input value="{fonte>Name}" id="produto_nome"/>
 										<Label text="Descrição"/>
 										<Input value="{fonte>Description}" id="produto_descricao"/>
-										<Label/>
+										<Label text="Preço"/>
+										<Input value="{fonte>Price}" id="produto_preco"/>
 										<Button icon="sap-icon://save" text="Salvar" press="onSave"/>
 										<Button icon="sap-icon://edit" text="Atualizar" press="onUpdate"/>
 										<Button icon="sap-icon://refresh" text="Limpar" press="onClean"/>
