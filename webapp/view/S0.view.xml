@@ -17,6 +17,7 @@
 										<Input value="{fonte>Description}" id="produto_descricao"/>
 										<Label text="Preço"/>
 										<Input value="{fonte>Price}" id="produto_preco"/>
+										<Label/>
 										<Button icon="sap-icon://save" text="Salvar" press="onSave"/>
 										<Button icon="sap-icon://edit" text="Atualizar" press="onUpdate"/>
 										<Button icon="sap-icon://refresh" text="Limpar" press="onClean"/>
@@ -26,9 +27,9 @@
 						</Panel>
 						<Panel headerText="Produtos" expandable="true">
 							<SearchField search="onSearch"/>
-							<List id="list" items="{fonte>/Products}">
+							<List id="list" items="{fonte>/Products}" itemPress="onItemPress" mode="Delete" delete="onDelete">
 								<items>
-									<StandardListItem title="{fonte>ID}" description="{fonte>Name}" info="{fonte>Price}" press="onItemPress"/>
+									<StandardListItem title="{fonte>ID}" description="{fonte>Name}" info="{fonte>Price}"  type="Active"/>
 								</items>
 							</List>
 						</Panel>
